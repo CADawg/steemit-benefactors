@@ -14,7 +14,7 @@ class makePost
                     "parent_author" => "",
                     "parent_permlink" => $category,
                     "title" => $title,
-                    "body" => $body . "\n## **This post was created using @cadawg's [beneficiairies.app](https://cubiccastles.website/benefactor/)**",
+                    "body" => $body . "\n**This post was created using @cadawg's [Steemit Benefactors](https://cubiccastles.website/benefactor/)**",
                     "json_metadata" => $json_meta,
                     "author" => $_SESSION['user'],
                     "permlink" => $permalink

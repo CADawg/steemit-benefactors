@@ -1,0 +1,255 @@
+#wrapper {
+    width: 800px;
+    height: auto;
+    padding-bottom: 1px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #8f8f8f;
+}
+
+html, body {
+    font-family: "Montserrat",Arial, sans-serif;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+}
+
+#header {
+    height: 50px;
+    background: #555;
+}
+
+#id {
+    height: 50px;
+    width: 30%;
+    background: #000; 
+    color: #fff;
+    display: inline-block;
+}
+
+#nav {
+    float: right;
+    width: 50%;
+    height: 50px;
+    background: #555;
+}
+
+#nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#nav li {
+    float: left;
+    width: 33.33%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#nav a {
+    margin: 0;
+    width: 100%;
+    text-decoration: none;
+    line-height: 50px;
+    display: block;
+    color: white;
+}
+
+#nav a:hover {
+    background: #333;
+}
+
+#id p {
+    margin: 0;
+    line-height: 25px;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Pacifico", Arial, sans-serif;
+}
+
+#banner {
+    height: calc(40% - 50px);
+    width: 100%;
+    background: #444;
+    color: #fff;
+}
+
+#content {
+    margin: 1%;
+    padding: 1%;
+    box-sizing: border-box;
+    width: 98%;
+    height: 57.5%;
+    background-color: #222;
+}
+
+#banner h1:first-of-type, #content>h1:first-of-type {
+    margin: 0;
+    padding: 2% 0px 10px 0px;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+#content {
+    color: white;
+}
+
+#banner p {
+    margin: 0;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+#content p {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+#banner a, #content a {
+    color: white;
+}
+
+.usr-image{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    display: inline-block;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.usr-image#johndoer123 {
+    background-image:url(https://steemitimages.com/u/johndoer123/avatar);
+}
+
+.usr-image#cadawg {
+    background-image:url(https://steemitimages.com/u/cadawg/avatar);
+}
+
+.usr-image#mermaidvampire {
+    background-image:url(https://steemitimages.com/u/mermaidvampire/avatar);
+}
+
+.supporter{
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.supporter p, .supporter h1 {
+    text-align: left;
+    margin: 0;
+    display: inline-block;
+    width: calc(100% - 130px);
+}
+
+#banner,#content {
+    overflow: auto;
+}
+
+.tooltip {
+    color: #fff;
+    background-color: #a4a4a4;
+}
+
+.tooltip.top:after {
+    border-top-color: #a4a4a4;
+}
+
+.tooltippable {
+    text-decoration: underline;
+    font-style: normal;
+}
+
+.editor-toolbar a{
+    color: white !important;
+}
+
+.editor-toolbar {
+    background: #6f6f6f;
+}
+
+.CodeMirror.cm-s-paper.CodeMirror-wrap {
+    color: white;
+    background: #7f7f7f;
+}
+
+.CodeMirror-selectedtext {
+    background: #63a35c !important;
+    color: #fff;
+}
+
+.editor-toolbar a.active {
+    background: #3f3f3f;
+}
+
+.editor-toolbar a:hover {
+    background: #3f3f3f;
+}
+
+input[type=text] {
+    border: 1px solid #aaa;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.6) inset;
+    padding: 1px;
+    width: 75%; /*Older Browsers*/
+    width: calc(100% - 130px); /*Modern Browsers*/
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.wrappery div {
+    margin: 0 1%;
+}
+
+label[for] {
+    width: 120px;
+    display: inline-block;
+}
+
+input[type=text]:focus {
+    outline: 2px solid cyan;
+}
+
+.delete {
+    padding-left: 4px;
+}
+
+input[type=text].ddt {
+    width: 45%; /*Older Browsers*/
+    width: calc(48% - (53.7px / 2)); /*Modern Browsers*/
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+button {
+    color: white;
+    background: dodgerblue;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.wrappery {
+    margin-bottom: 20px;
+}
+
+.add_form_field {
+    margin-top: 20px;
+}
+
+input {
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.link_to {
+    text-align: center;
+    width: 100%;
+    color: white;
+}

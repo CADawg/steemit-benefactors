@@ -65,10 +65,55 @@ function genBeneficiaries($tring) {
     return $beneficiaries;
 }
 
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+
+function genNewBeneficiaries($names,$percents) {
+    $beneficiaries = [
+        [
+            "account" => "cadawg",
+            "weight" => 100,
+        ],
+        [
+            "account" => "apps4steem",
+            "weight" => 400,
+        ]
+    ];
+
+    if(!($names === null or $percents === null)) {
+        foreach ($names as $ind=>$val) {
+            if (isset($val) and $val !== "" and $val !== null and isset($percents[$ind]) and $percents[$ind] !== "" and $percents[$ind] !== null) {
+                $weight = (double)$val * 100;
+
+                $weight = (int)$weight;
+
+                $beneficiary =
+                    [
+                        "account" => $val,
+                        "weight" => $weight
+                    ];
+
+                $beneficiaries[] = $beneficiary;
+            }
+        }
+    }
+
+    return $beneficiaries;
+}
+
+
 $vl = require  'verifylogin.php';
 
 if (isset($_GET['js']) and $vl) {
-    if(isset($_POST['title']) and /*isset($_POST['g-recaptcha-response']) and*/ isset($_POST['permlink']) and isset($_POST['tags']) and isset($_POST['benefactor']) and isset($_POST['post'])) {
+    if(isset($_POST['title']) and isset($_POST["ubenefactors"]) and isset($_POST["vbenefactors"]) and /*isset($_POST['g-recaptcha-response']) and*/ isset($_POST['permlink']) and isset($_POST['tags']) and isset($_POST['post'])) {
         if(vCaptcha($_POST['g-recaptcha-response'])) {
             $json_metadata = [
                 "community" => "beneficiaries",
@@ -78,10 +123,11 @@ if (isset($_GET['js']) and $vl) {
             ];
 
             $category = explode(",", $_POST['tags'], 2)[0];
-            $post = $postGenerator->createPost($_POST['title'], $_POST['post'], $json_metadata, $_POST['permlink'], genBeneficiaries($_POST['benefactor']), $category);
+            $post = $postGenerator->createPost($_POST['title'], $_POST['post'], $json_metadata, $_POST['permlink'], genNewBeneficiaries($_POST['ubenefactors'],$_POST['vbenefactors']), $category);
             $state = $postGenerator->broadcast($post);
             if(isset($state->result)) {
-                print "Post created successfully!:|:&*83252835723&&+£Visit your post: <br><a href='https://steemit.com/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Here (Steemit.com)</a><br><a href='https://busy.org/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Here (Busy.org)</a>";
+                print "Post created successfully!:|:&*83252835723&&+£<p class='link_to'>Visit your post:</p><br><a class='link_to' href='https://steemit.com/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Here (Steemit)</a><br><a class='link_to' href='https://busy.org/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Here (Busy)</a>";
+                $_SESSION["randstring"] = generateRandomString();
             } elseif (isset($state->error)) {
                 print($state->error . " : " . $state->error_description);
             } else {
@@ -95,49 +141,7 @@ if (isset($_GET['js']) and $vl) {
     }
 } elseif (!$vl) {
     print("Sorry, you are not signed in!");
+    print_r($_POST);
 } else {
-    if(isset($_POST['title']) /*and isset($_POST['g-recaptcha-response'])*/ and isset($_POST['permlink']) and isset($_POST['tags']) and isset($_POST['benefactor']) and isset($_POST['post'])) {
-        if(vCaptcha($_POST['g-recaptcha-response'])) {
-            $json_metadata = [
-                "community" => "beneficiaries",
-                "app" => "beneficiaries/1.1.2",
-                "format" => "markdown",
-                "tags" => array_slice(explode(",", $_POST['tags']), 0, 5)
-            ];
-
-            $category = explode(",", $_POST['tags'], 2)[0];
-            $post = $postGenerator->createPost($_POST['title'], $_POST['post'], $json_metadata, $_POST['permlink'], genBeneficiaries($_POST['benefactor']), $category);
-            $state = $postGenerator->broadcast($post);
-            if(isset($state->result)) {
-                print "Your post was created successfully!<br>Visit your post: <br><a href='https://steemit.com/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Here (Steemit.com)</a><br><a href='https://busy.org/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Here (Busy.org)</a>";
-            } elseif (isset($state->error)) {
-                print("<a href='/benefactor/'>Go Back to the form!</a><br>");
-                print("We Have encountered a " . $state->error . " : " . $state->error_description . "!<br>So That you can re-create the post, here is the data you submitted:<br><br>");
-                foreach ($_POST as $key => $value) {
-                    print $key . " --- " . $value . "<br>";
-                }
-            } else {
-                print("<a href='/benefactor/'>Go Back to the form!</a>");
-                print "Unknown error!, Please try again!<br>";
-                print "So that you can re-create the post, here is the data you submitted:<br><br>";
-                foreach ($_POST as $key => $value) {
-                    print $key . " --- " . $value . "<br>";
-                }
-            }
-        } else {
-            print("<a href='/benefactor/'>Go Back to the form!</a><br>");
-            print ("Invalid captcha response!<br>");
-            print "So that you can re-create the post, here is the data you submitted:<br><br>";
-            foreach ($_POST as $key => $value) {
-                print $key . " --- " . $value . "<br>";
-            }
-        }
-    } else {
-        print("<a href='/benefactor/'>Go Back to the form!</a><br>");
-        print("Sorry, you are missing some of the items<br>");
-        print "So that you can re-create the post, here is the data you submitted:<br><br>";
-        foreach ($_POST as $key => $value) {
-            print $key . " --- " . $value . "<br>";
-        }
-    }
+    print("Invalid Request!");
 }

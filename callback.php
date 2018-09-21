@@ -30,6 +30,7 @@ if (isset($_GET['access_token']) and isset($_GET['expires_in'])) {
     $usr_name = require 'getLogin.php';
     if ($usr_name != false) {
         $_SESSION['user'] = $usr_name;
+        $_SESSION["randstring"] = generateRandomString();
         redirect();
     } else {
         session_unset();
