@@ -11,8 +11,8 @@ if (!isset($_SESSION["randstring"])) {
 
 <head>
 
-    <title>Steem Beneficiaries</title>
-    <meta name="description" content="Steemit Beneficiaries is the best way to post on the steemit blockchain with tons of options!"/>
+    <title>Steemit 👏 Benefactors</title>
+    <meta name="description" content="Steemit Beneficiaries is the best way to post on the steemit blockchain with tons of options! The 👏 future 👏 of 👏 steemit 👏 posting 👏 is 👏 here, 👏 now!"/>
     <meta name="keywords" content="steem,steemit,post,make,money,blockchain,delegation,benefactor,rewards,voting,split,share"/>
     <meta charset="utf-8"/>
     <meta lang="en"/>
@@ -20,6 +20,7 @@ if (!isset($_SESSION["randstring"])) {
     <meta name="generator" content="@cadawg"/>
     <meta name="copyright" content="Copyright Conor Howland 2018"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <?php include "icons.php"; ?>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
