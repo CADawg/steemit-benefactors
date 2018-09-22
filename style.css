@@ -12,6 +12,7 @@ html, body {
     margin: 0;
     height: 100%;
     padding: 0;
+	background: #777;
 }
 
 #header {
@@ -272,6 +273,10 @@ button {
     padding: 5px 10px;
 }
 
+button:disabled {
+	background: #999;
+}
+
 .wrappery {
     margin-bottom: 20px;
 }
@@ -325,4 +330,12 @@ iframe[data-aa="1007335"] {
     margin: 0 auto;
     padding: 0 auto;
     display: block;
+}
+
+.CodeMirror .CodeMirror-code .cm-link {
+	color: #00cc99;
+}
+
+.CodeMirror .CodeMirror-code .cm-url {
+	color: dodgerblue;
 }

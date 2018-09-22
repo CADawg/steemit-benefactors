@@ -17,29 +17,6 @@ $(document).ready(function() {
     $('#yourpost').find("code").addClass("w3-codespan ch-mono");
 }, 1000);*/
 
-$("#subjs").click(function() {
-    e.preventDefault();
-    var url = "submitpost.php?js"; // the script where you handle the form input.
-
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: $("#postform").serialize(), // serializes the form's elements.
-        success: function(data)
-        {
-            var ds = data.split(":|:&*83252835723&&+£");
-            if (1 in ds) {
-                alert(ds[1], "Steemit Benefactors", true)
-            } else {
-                alert(ds[0], "Steemit Benefactors", true);
-            }
-
-        }
-    });
-
-    return false;
-});
-
 function createCookie(name,value,days) {
     var expires = "";
     if (days) {

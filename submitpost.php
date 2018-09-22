@@ -91,7 +91,7 @@ function genNewBeneficiaries($names,$percents) {
     if(!($names === null or $percents === null)) {
         foreach ($names as $ind=>$val) {
             if (isset($val) and $val !== "" and $val !== null and isset($percents[$ind]) and $percents[$ind] !== "" and $percents[$ind] !== null) {
-                $weight = (double)$val * 100;
+                $weight = (double)$percents[$ind] * 100;
 
                 $weight = (int)$weight;
 
@@ -126,7 +126,7 @@ if (isset($_GET['js']) and $vl) {
             $post = $postGenerator->createPost($_POST['title'], $_POST['post'], $json_metadata, $_POST['permlink'], genNewBeneficiaries($_POST['ubenefactors'],$_POST['vbenefactors']), $category);
             $state = $postGenerator->broadcast($post);
             if(isset($state->result)) {
-                print "Post created successfully!:|:&*83252835723&&+£<p class='titl'>Steemit:</p><p><a href='https://steemit.com/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Link To Post</a></p><p class='titl'>Busy:</p><p><a href='https://busy.org/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Link To Post</a></p>";
+                print "<p>Post created successfully!</p><p class='titl'>Steemit:</p><p><a href='https://steemit.com/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Link To Post</a></p><p class='titl'>Busy:</p><p><a href='https://busy.org/" . $category . "/@" . $_SESSION['user'] . "/" . $_POST['permlink'] . "'>Link To Post</a></p>";
                 $_SESSION["randstring"] = generateRandomString();
             } elseif (isset($state->error)) {
                 print($state->error . " : " . $state->error_description);

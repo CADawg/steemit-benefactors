@@ -103,6 +103,28 @@ if (!isset($_SESSION["randstring"])) {
 <script src="writepost.js"></script>
 
 <script>
+	$("#subjs").click(function(e) {
+    e.preventDefault();
+    var url = "submitpost.php?js"; // the script where you handle the form input.
+	
+	$("#subjs").prop("disabled",true);
+	
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: $("#postform").serialize(), // serializes the form's elements.
+        success: function(data)
+        {
+			$("#subjs").prop("disabled",false);
+            
+            alert(data, "Steemit Benefactors", true);
+        }
+
+    });
+
+    return false;
+});
+
     var simplemd = new SimpleMDE({
         element: $("#post")[0],
         autosave: {
@@ -130,7 +152,7 @@ if (!isset($_SESSION["randstring"])) {
         if (readCookie(uniqueID) == null) {
             $("<div class='fs-overlay'><div class='midbox'><p>" + pagename + " says:</p>" + message + "<br><br><button class='chrome-alert' onclick='" + callback + "(true);$(this).parent().parent().remove();'>" + buttonOK + "</button><button class='chrome-cancel' onclick='" + callback + "(false);$(this).parent().parent().remove();'>" + buttonCANCEL + "</button></div></div>").appendTo("body");
         } else {
-            if (readCookie(uniqueID) == true) {
+            if (readCookie(uniqueID) == "true") {
                 callbackFunction(true);
             } else {
                 callbackFunction(false);

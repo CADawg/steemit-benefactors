@@ -18,7 +18,6 @@
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                 crossorigin="anonymous"></script>
 
-        <script src="gdprsafe.js"></script>
 
 
         <link type="text/css" rel="stylesheet" href="style.css"/>
@@ -81,6 +80,8 @@
                 <iframe data-aa='1007335' src='//ad.a-ads.com/1007335?size=728x90&background_color=222222&text_color=ffffff&title_color=ffffff&title_hover_color=aaaaff&link_color=ffffff&link_hover_color=aaaaff' scrolling='no' style='width:728px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
                 <a class="adtext" rel="nofollow" href='http://a-ads.com?partner=1007335'>Advertise Here</a>
 
+				
+				<script src="gdprsafe.js"></script>
             </div>
             
         </div>

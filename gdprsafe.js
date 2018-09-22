@@ -31,7 +31,7 @@ function prompt(message = "", callback = "console.log", callbackFunction = conso
     if (readCookie(uniqueID) == null) {
         $("<div class='fs-overlay'><div class='midbox'><p>" + pagename + " says:</p>" + message + "<br><br><button class='chrome-alert' onclick='" + callback + "(true);$(this).parent().parent().remove();'>" + buttonOK + "</button><button class='chrome-cancel' onclick='" + callback + "(false);$(this).parent().parent().remove();'>" + buttonCANCEL + "</button></div></div>").appendTo("body");
     } else {
-        if (readCookie(uniqueID) == true) {
+        if (readCookie(uniqueID) == "true") {
             callbackFunction(true);
         } else {
             callbackFunction(false);
@@ -52,7 +52,11 @@ function injectTracking(should) {
         script.async = true;
 
         $("body").append(script);
-        window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'UA-45168180-9');
+         window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-45168180-9');
     }
 }
 $(document).ready(function() {
