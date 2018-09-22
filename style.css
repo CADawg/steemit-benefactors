@@ -159,6 +159,42 @@ html, body {
     background-color: #a4a4a4;
 }
 
+.fs-overlay {
+    background: rgba(0,0,0, 0.4);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: no-display;
+}
+
+.fs-overlay .midbox {
+    margin: 0 auto;
+    background: white;
+    width: 400px;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 20px 40px 60px 20px;
+}
+
+.fs-overlay .midbox p:first-of-type {
+    margin: 0;
+    color: black;
+}
+
+.fs-overlay .midbox p {
+    color: #666;
+    margin: 2px 2px 0;
+}
+
+.fs-overlay .midbox p.titl {
+    margin: 10px 2px 0;
+    padding: 1px;
+    border-bottom: 1px solid #aaa;
+}
+
 .tooltip.top:after {
     border-top-color: #a4a4a4;
 }
@@ -194,7 +230,7 @@ html, body {
     background: #3f3f3f;
 }
 
-input[type=text] {
+input[type=text], input[type=tel]  {
     border: 1px solid #aaa;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.6) inset;
     padding: 1px;
@@ -213,7 +249,7 @@ label[for] {
     display: inline-block;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=tel]:focus  {
     outline: 2px solid cyan;
 }
 
@@ -221,7 +257,7 @@ input[type=text]:focus {
     padding-left: 4px;
 }
 
-input[type=text].ddt {
+input[type=text].ddt, input[type=tel].ddt {
     width: 45%; /*Older Browsers*/
     width: calc(48% - (53.7px / 2)); /*Modern Browsers*/
     margin-bottom: 5px;
@@ -252,4 +288,41 @@ input {
     text-align: center;
     width: 100%;
     color: white;
+}
+
+button.chrome-alert {
+    color: white;
+    float: right;
+    background: #4285F4;
+    padding: 3px 13px;
+    border: 7px solid #4285F4;
+}
+
+button.chrome-cancel {
+    color: #aaa;
+    background: none;
+    float: right;
+    padding: 9px 18px;
+    margin-right: 10px;
+    margin-right: 10px;
+}
+
+button.chrome-cancel:focus {
+    outline: none;
+}
+
+button.chrome-alert:hover, button.chrome-alert:focus  {
+    outline: none;
+    box-shadow: 0 0 10px #4285F4;
+}
+
+a.adtext {
+    display: block;
+    text-align: center;
+}
+
+iframe[data-aa="1007335"] {
+    margin: 0 auto;
+    padding: 0 auto;
+    display: block;
 }

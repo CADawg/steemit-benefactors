@@ -2,7 +2,6 @@
 <html>
 
     <head>
-
         <title>Steemit 👏 Benefactors</title>
         <meta name="description" content="Steemit Beneficiaries is the best way to post on the steemit blockchain with tons of options! The 👏 future 👏 of 👏 steemit 👏 posting 👏 is 👏 here, 👏 now!"/>
         <meta name="keywords" content="steem,steemit,post,make,money,blockchain,delegation,benefactor,rewards,voting,split,share"/>
@@ -13,6 +12,14 @@
         <meta name="copyright" content="Copyright Conor Howland 2018"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <?php include "icons.php"; ?>
+
+        <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+
+        <script src="gdprsafe.js"></script>
+
 
         <link type="text/css" rel="stylesheet" href="style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico" rel="stylesheet">
@@ -70,7 +77,10 @@
                     <h2><a href="https://steemit.com/@johndoer123">@JohnDoer123</a></h2>
                     <p>Donations &amp; Support</p>
                 </div>
-                    
+
+                <iframe data-aa='1007335' src='//ad.a-ads.com/1007335?size=728x90&background_color=222222&text_color=ffffff&title_color=ffffff&title_hover_color=aaaaff&link_color=ffffff&link_hover_color=aaaaff' scrolling='no' style='width:728px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
+                <a class="adtext" rel="nofollow" href='http://a-ads.com?partner=1007335'>Advertise Here</a>
+
             </div>
             
         </div>
