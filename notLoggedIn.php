@@ -43,7 +43,7 @@
                 
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="https://v2.steemconnect.com/oauth2/authorize?client_id=cadawg.app&redirect_uri=https://cubiccastles.website/benefactor/callback.php&scope=comment,comment_options,custom_json,offline<?php if(isset($_GET['bf'])) {echo "&state=" . $actual_link;}?>">Login</a></li>
+                        <li><a href="https://steemconnect.com/oauth2/authorize?client_id=cadawg.app&redirect_uri=https://cubiccastles.website/benefactor/callback.php&scope=comment,comment_options,custom_json,offline<?php if(isset($_GET['bf'])) {echo "&state=" . $actual_link;}?>">Login</a></li>
                         <li><a href="about.html">About</a></li>
                     </ul>
                     
