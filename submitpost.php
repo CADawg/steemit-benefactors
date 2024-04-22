@@ -8,36 +8,6 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 
 function vCaptcha($response) {
     return true;
-    /*$curl2 = curl_init();
-
-    $ipAddress = $_SERVER['REMOTE_ADDR'];
-
-    curl_setopt_array($curl2, array(
-        CURLOPT_URL => "https://www.google.com/recaptcha/api/siteverify",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "secret=6Lf29lgUAAAAAEP3k8VWo_zY2-IPntSOUzgAAiZV&response=$response&remoteip=$ipAddress",
-        CURLOPT_HTTPHEADER => array(
-            "cache-control: no-cache",
-            "content-type: application/x-www-form-urlencoded",
-        ),
-    ));
-
-    $response = curl_exec($curl2);
-    $err = curl_error($curl2);
-
-    curl_close($curl2);
-
-    if ($err) {
-        return false;
-    } else {
-        return json_decode($response)->success;
-    }
-    return true;*/
 }
 
 function genBeneficiaries($tring) {
